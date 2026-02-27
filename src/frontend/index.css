@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* ── School Brand Colors (OKLCH) ── */
+    /* Navy Blue #1a2b5e  → oklch(0.27 0.09 264) */
+    --navy: 0.27 0.09 264;
+    /* Gold #c9a52c       → oklch(0.72 0.14 82) */
+    --gold: 0.72 0.14 82;
+    /* Dark Gold for text contrast */
+    --gold-dark: 0.58 0.12 82;
+    /* Light gold tint */
+    --gold-light: 0.92 0.06 82;
+
+    /* ── Semantic tokens ── */
+    --background: 1 0 0;
+    --foreground: 0.18 0.01 260;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.01 260;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.01 260;
+    --primary: 0.27 0.09 264;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.92 0.06 82;
+    --secondary-foreground: 0.27 0.09 264;
+    --muted: 0.96 0.005 260;
+    --muted-foreground: 0.48 0.02 260;
+    --accent: 0.72 0.14 82;
+    --accent-foreground: 0.18 0.02 260;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.90 0.01 260;
+    --input: 0.90 0.01 260;
+    --ring: 0.27 0.09 264;
+
+    --chart-1: 0.27 0.09 264;
+    --chart-2: 0.72 0.14 82;
+    --chart-3: 0.6 0.118 184.704;
+    --chart-4: 0.398 0.07 227.392;
+    --chart-5: 0.828 0.189 84.429;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .school-navy {
+    background-color: oklch(var(--navy));
+  }
+  .school-gold {
+    background-color: oklch(var(--gold));
+  }
+  .text-school-navy {
+    color: oklch(var(--navy));
+  }
+  .text-school-gold {
+    color: oklch(var(--gold));
+  }
+  .text-school-gold-dark {
+    color: oklch(var(--gold-dark));
+  }
+  .border-school-gold {
+    border-color: oklch(var(--gold));
+  }
+  .border-school-navy {
+    border-color: oklch(var(--navy));
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, oklch(0.72 0.14 82), oklch(0.82 0.16 88));
+  }
+
+  .navy-gradient {
+    background: linear-gradient(180deg, oklch(0.22 0.09 264), oklch(0.30 0.09 264));
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
